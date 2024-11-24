@@ -5,9 +5,17 @@ body {
 	user-select: none; /* Standard */
 }
 
-.scene {`
+.scene {
 	height: 1000px;
-	perspective: none;
+	width: 100%;
+}
+
+.interaction--layer {
+	height: 1000px;
+	width: 100%;
+	border: black solid 2px;
+	z-index: 10;
+	position: absolute;
 }
 
 .cube, .platter {
@@ -27,7 +35,6 @@ body {
 }
 
 .cube__face {
-	opacity: .5;
 	position: absolute;
 	width: 500px;
 	height: 100px;
@@ -40,7 +47,7 @@ body {
 .cube__face--top,
 .cube__face--bottom
 {
-	background-color: red; 
+	background-color: grey; 
 	border: 1px solid black;
 }
 
@@ -78,12 +85,8 @@ body {
 .platter, .disc {
 	width: 400px;
 	height: 400px;
+	margin: 20px;
 } 
-
-.platter {
-	transform: rotateX(90deg) translateZ(-200px) translateX(30px);
-}
-
 
 .disc { 
 	background-color: black;

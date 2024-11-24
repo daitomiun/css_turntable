@@ -5,9 +5,7 @@
     /* Language and Environment */
     "target": "es2016",                                  /* Set the JavaScript language version for emitted JavaScript and include compatible library declarations. */
 
-    /* Modules */
-    "module": "commonjs",                                /* Specify what module code is generated. */
-    "outDir": "./js_compilation/",
+   "outFile": "./js_compilation/index.js",
     /* JavaScript Support */
     "allowJs": false,                                  /* Allow JavaScript files to be a part of your program. Use the 'checkJS' option to get errors from these files. */
     // "checkJs": true,                                  /* Enable error reporting in type-checked JavaScript files. */
@@ -28,5 +26,8 @@
     "skipDefaultLibCheck": true,                      /* Skip type checking .d.ts files that are included with TypeScript. */
     "skipLibCheck": true                                 /* Skip type checking all .d.ts files. */
   },
-  "include": ["./app/ts/*/"]
+  "include": [
+    "./app/ts/*.ts",
+    "./app/ts/**/*.ts",
+  ]
 }

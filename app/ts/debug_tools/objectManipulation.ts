@@ -1,7 +1,5 @@
-// TODO here this will be used as an importer to all segmented ts files
-console.log('hello');
-
 let turntableId = document.getElementById("box__rotate");
+let sceneId = document.getElementById("interactionLayerId");
 
 let lastX: number;
 let lastY: number;
@@ -9,8 +7,9 @@ let currentX = -25;
 let currentY = 25;
 
 let isDragging = false;
+let isDebugMode = true;
 
-turntableId?.addEventListener("mousedown", (e) => {
+sceneId?.addEventListener("mousedown", (e) => {
 	isDragging = true;
 	lastX = e.clientX;
 	lastY = e.clientY;
@@ -19,29 +18,26 @@ turntableId?.addEventListener("mousedown", (e) => {
 
 });
 
-turntableId?.addEventListener("mouseup", (e) => {
+sceneId?.addEventListener("mouseup", (e) => {
 	isDragging = false;
 });
 
-turntableId?.addEventListener("mouseout", (e) => {
+sceneId?.addEventListener("mouseout", (e) => {
 	isDragging = false;
 });
 
-turntableId?.addEventListener("mousemove", (e) => {
-	if (isDragging) {
+sceneId?.addEventListener("mousemove", (e) => {
+	if (isDragging && isDebugMode) {
 		const deltaX = e.clientX - lastX;
 		const deltaY = e.clientY - lastY;
 
 		currentX += deltaY * 0.5;
 		currentY += deltaX * 0.5;
 
-		turntableId!.style.transform = `rotateX(${currentX}deg) rotateY(${currentY}deg)`;
+		turntableId!.style.transform = `translate3d(250px, 250px, 0px) rotateX(${currentX}deg) rotateY(${currentY}deg)`;
 
 		lastX = e.clientX;
 		lastY = e.clientY;
 	}
 });
 
-
-
-console.log(turntableId);
