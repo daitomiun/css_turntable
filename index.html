@@ -11,9 +11,12 @@
 			<button id="debug" type="button">Enter debug mode</button>
 		</div>
 		<div id="sceneId" class="scene">
-			<div id="interactionLayerId" class="interaction--layer"></div>
+			<div id="interaction-layer-id" class="interaction--layer"></div>
 			<div id="box__rotate" class="cube" >
-				<div class="cube__face cube__face--front">FRONT</div>
+				<div class="cube__face cube__face--front">FRONT
+					<button id="forward-button-id" type="button">Next Song</button>
+					<button id="previous-button-id" type="button">Previous Song</button>
+				</div>
 				<div class="cube__face cube__face--back">BACK</div>
 				<div class="cube__face cube__face--right">RIGHT</div>
 				<div class="cube__face cube__face--left">LEFT</div>
@@ -21,6 +24,9 @@
 					TOP
 					<div class="platter">
 						<div class="disc">PLATTER</div>
+					</div>
+					<div class="panel_controls--container">
+						<button id="start-stop-button-id" type="button">START/STOP</button>
 					</div>
 				</div>
 				<div class="cube__face cube__face--bottom">BOTTOM</div>

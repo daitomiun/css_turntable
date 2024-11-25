@@ -1,5 +1,10 @@
+let layerId = "interaction-layer-id"
+let layerClass = "interaction--layer"
+
 let turntableId = document.getElementById("box__rotate");
-let sceneId = document.getElementById("interactionLayerId");
+let interactionLayerId = document.getElementById(layerId);
+let debugId = document.getElementById("debug");
+let sceneId = document.getElementById("sceneId");
 
 let lastX: number;
 let lastY: number;
@@ -9,7 +14,25 @@ let currentY = 25;
 let isDragging = false;
 let isDebugMode = true;
 
-sceneId?.addEventListener("mousedown", (e) => {
+
+
+debugId?.addEventListener("click", () => {
+	if (isDebugMode) {
+		console.log("delete Layer")
+		interactionLayerId!.style.display = "none";
+		debugId!.innerHTML = "Enter Debug mode";
+		isDebugMode = false;
+	} else {
+		console.log("create Layer")
+		debugId!.innerHTML = "Exit Debug mode";
+		interactionLayerId!.style.display = "block";
+		isDebugMode = true;
+	}
+	console.log("debug mode is: ", isDebugMode);
+})
+
+interactionLayerId?.addEventListener("mousedown", (e) => {
+	console.log("layer interaction check");
 	isDragging = true;
 	lastX = e.clientX;
 	lastY = e.clientY;
@@ -18,15 +41,15 @@ sceneId?.addEventListener("mousedown", (e) => {
 
 });
 
-sceneId?.addEventListener("mouseup", (e) => {
+interactionLayerId?.addEventListener("mouseup", (e) => {
 	isDragging = false;
 });
 
-sceneId?.addEventListener("mouseout", (e) => {
+interactionLayerId?.addEventListener("mouseout", (e) => {
 	isDragging = false;
 });
 
-sceneId?.addEventListener("mousemove", (e) => {
+interactionLayerId?.addEventListener("mousemove", (e) => {
 	if (isDragging && isDebugMode) {
 		const deltaX = e.clientX - lastX;
 		const deltaY = e.clientY - lastY;

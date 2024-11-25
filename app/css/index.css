@@ -1,10 +1,3 @@
-body {
-	-webkit-user-select: none; /* Safari */
-	-moz-user-select: none; /* Firefox */
-	-ms-user-select: none; /* IE10+/Edge */
-	user-select: none; /* Standard */
-}
-
 .scene {
 	height: 1000px;
 	width: 100%;
@@ -74,7 +67,10 @@ body {
 .cube__face--right  { transform: rotateY( 90deg) translateZ(350px); }
 .cube__face--back   { transform: rotateY(180deg) translateZ(250px); }
 .cube__face--left   { transform: rotateY(-90deg) translateZ(250px); }
-.cube__face--top    { transform: rotateX( 90deg) translateZ(250px); }
+.cube__face--top    { 
+	transform: rotateX( 90deg) translateZ(250px); 
+	display: grid;
+}
 .cube__face--bottom { transform: rotateX(-90deg) translateZ(-150px); }
 
 

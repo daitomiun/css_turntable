@@ -1,25 +1,45 @@
 "use strict";
+let layerId = "interaction-layer-id";
+let layerClass = "interaction--layer";
 let turntableId = document.getElementById("box__rotate");
-let sceneId = document.getElementById("interactionLayerId");
+let interactionLayerId = document.getElementById(layerId);
+let debugId = document.getElementById("debug");
+let sceneId = document.getElementById("sceneId");
 let lastX;
 let lastY;
 let currentX = -25;
 let currentY = 25;
 let isDragging = false;
 let isDebugMode = true;
-sceneId === null || sceneId === void 0 ? void 0 : sceneId.addEventListener("mousedown", (e) => {
+debugId === null || debugId === void 0 ? void 0 : debugId.addEventListener("click", () => {
+    if (isDebugMode) {
+        console.log("delete Layer");
+        interactionLayerId.style.display = "none";
+        debugId.innerHTML = "Enter Debug mode";
+        isDebugMode = false;
+    }
+    else {
+        console.log("create Layer");
+        debugId.innerHTML = "Exit Debug mode";
+        interactionLayerId.style.display = "block";
+        isDebugMode = true;
+    }
+    console.log("debug mode is: ", isDebugMode);
+});
+interactionLayerId === null || interactionLayerId === void 0 ? void 0 : interactionLayerId.addEventListener("mousedown", (e) => {
+    console.log("layer interaction check");
     isDragging = true;
     lastX = e.clientX;
     lastY = e.clientY;
     e.preventDefault();
 });
-sceneId === null || sceneId === void 0 ? void 0 : sceneId.addEventListener("mouseup", (e) => {
+interactionLayerId === null || interactionLayerId === void 0 ? void 0 : interactionLayerId.addEventListener("mouseup", (e) => {
     isDragging = false;
 });
-sceneId === null || sceneId === void 0 ? void 0 : sceneId.addEventListener("mouseout", (e) => {
+interactionLayerId === null || interactionLayerId === void 0 ? void 0 : interactionLayerId.addEventListener("mouseout", (e) => {
     isDragging = false;
 });
-sceneId === null || sceneId === void 0 ? void 0 : sceneId.addEventListener("mousemove", (e) => {
+interactionLayerId === null || interactionLayerId === void 0 ? void 0 : interactionLayerId.addEventListener("mousemove", (e) => {
     if (isDragging && isDebugMode) {
         const deltaX = e.clientX - lastX;
         const deltaY = e.clientY - lastY;
