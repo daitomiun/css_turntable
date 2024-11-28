@@ -69,7 +69,7 @@
 .cube__face--left   { transform: rotateY(-90deg) translateZ(250px); }
 .cube__face--top    { 
 	transform: rotateX( 90deg) translateZ(250px); 
-	display: grid;
+	display: flex;
 }
 .cube__face--bottom { transform: rotateX(-90deg) translateZ(-150px); }
 

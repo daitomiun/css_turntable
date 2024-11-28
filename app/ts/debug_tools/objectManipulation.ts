@@ -1,5 +1,4 @@
 let layerId = "interaction-layer-id"
-let layerClass = "interaction--layer"
 
 let turntableId = document.getElementById("box__rotate");
 let interactionLayerId = document.getElementById(layerId);
@@ -18,21 +17,17 @@ let isDebugMode = true;
 
 debugId?.addEventListener("click", () => {
 	if (isDebugMode) {
-		console.log("delete Layer")
 		interactionLayerId!.style.display = "none";
 		debugId!.innerHTML = "Enter Debug mode";
 		isDebugMode = false;
 	} else {
-		console.log("create Layer")
 		debugId!.innerHTML = "Exit Debug mode";
 		interactionLayerId!.style.display = "block";
 		isDebugMode = true;
 	}
-	console.log("debug mode is: ", isDebugMode);
 })
 
 interactionLayerId?.addEventListener("mousedown", (e) => {
-	console.log("layer interaction check");
 	isDragging = true;
 	lastX = e.clientX;
 	lastY = e.clientY;
