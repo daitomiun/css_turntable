@@ -11,7 +11,8 @@
 	position: absolute;
 }
 
-.cube, .platter {
+.cube,
+.platter {
 	position: relative;
 	transform-style: preserve-3d;
 }
@@ -38,9 +39,8 @@
 .cube__face--back,
 .cube__face--left,
 .cube__face--top,
-.cube__face--bottom
-{
-	background-color: grey; 
+.cube__face--bottom {
+	background-color: grey;
 	border: 1px solid black;
 }
 
@@ -63,30 +63,94 @@
 }
 
 
-.cube__face--front  { transform: rotateY(0deg)   translateZ(250px); }
-.cube__face--right  { transform: rotateY( 90deg) translateZ(350px); }
-.cube__face--back   { transform: rotateY(180deg) translateZ(250px); }
-.cube__face--left   { transform: rotateY(-90deg) translateZ(250px); }
-.cube__face--top    { 
-	transform: rotateX( 90deg) translateZ(250px); 
-	display: flex;
+.cube__face--front {
+	transform: rotateY(0deg) translateZ(250px);
 }
-.cube__face--bottom { transform: rotateX(-90deg) translateZ(-150px); }
+
+.cube__face--right {
+	transform: rotateY(90deg) translateZ(350px);
+}
+
+.cube__face--back {
+	transform: rotateY(180deg) translateZ(250px);
+}
+
+.cube__face--left {
+	transform: rotateY(-90deg) translateZ(250px);
+}
+
+.cube__face--top {
+	transform: rotateX(90deg) translateZ(250px);
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+}
+
+.cube__face--bottom {
+	transform: rotateX(-90deg) translateZ(-150px);
+}
 
 
 .cube {
 	transform: translate3d(250px, 250px, 0px) rotateX(-25deg) rotateY(25deg) rotateZ(0deg);
 }
 
-.platter, .disc {
+.platter,
+.disc {
 	width: 400px;
 	height: 400px;
-	margin: 20px;
-} 
+}
 
-.disc { 
+.platter {
+	margin: 0 0 0 20px;
+}
+
+.disc {
 	background-color: black;
 	border-radius: 50% 50%;
 	color: white;
 	text-align: center;
+}
+
+
+.panel__controls--container {
+	width: 100%;
+	height: 400px;
+	margin: 0 10px 0 0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-end;
+}
+
+.slider__volume {
+	-webkit-appearance: none;
+	background: #000;
+	width: 6px;
+	height: 200px;
+	border-radius: 10px;
+	vertical-align: bottom;
+}
+
+
+.button__start--stop {
+	width: 100px;
+	height: 100px;
+	margin-top: 20px;
+}
+
+.slider__volume::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	appearance: none;
+	width: 25px;
+	height: 35px;
+	background: #04AA6D;
+	cursor: pointer;
+}
+
+.slider__volume::-moz-range-thumb {
+	width: 25px;
+	height: 35px;
+	background: #04AA6D;
+	cursor: pointer;
 }

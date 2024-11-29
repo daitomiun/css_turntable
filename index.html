@@ -1,37 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Document</title>
-		<link rel="stylesheet" href="./app/css/index.css" type="text/css"></link>
-	</head>
-	<body>
-		<div  class="control--panel">
-			<button id="debug" type="button">Enter debug mode</button>
-		</div>
-		<div id="sceneId" class="scene">
-			<div id="interaction-layer-id" class="interaction--layer"></div>
-			<div id="box__rotate" class="cube" >
-				<div class="cube__face cube__face--front">FRONT
-					<button id="forward-button-id" type="button">Next Song</button>
-					<button id="previous-button-id" type="button">Previous Song</button>
-				</div>
-				<div class="cube__face cube__face--back">BACK</div>
-				<div class="cube__face cube__face--right">RIGHT</div>
-				<div class="cube__face cube__face--left">LEFT</div>
-				<div class="cube__face cube__face--top">
-					<div class="platter">
-						<div class="disc">PLATTER</div>
-					</div>
-					<div class="panel_controls--container">
-						<button id="start-stop-button-id" type="button">START/STOP</button>
-						<div class="slidecontainer"><input type="range" min="1" max="100" value="50" class="volumeslider" id="volumeId"></div>
-					</div>
-				</div>
-				<div class="cube__face cube__face--bottom">BOTTOM</div>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="./app/css/index.css" type="text/css">
+	</link>
+</head>
+
+<body>
+	<div class="control--panel">
+		<button id="debug" type="button">Enter debug mode</button>
+		<input type="range" min="1" max="100" value="50" class="slider__volume" id="slidervolumeid"
+			style="writing-mode: vertical-lr; direction: rtl">
+	</div>
+	<div id="sceneId" class="scene">
+		<div id="interaction-layer-id" class="interaction--layer"></div>
+		<div id="box__rotate" class="cube">
+			<div class="cube__face cube__face--front">FRONT
+				<button id="forward-button-id" type="button">Next Song</button>
+				<button id="previous-button-id" type="button">Previous Song</button>
 			</div>
+			<div class="cube__face cube__face--back">BACK</div>
+			<div class="cube__face cube__face--right">RIGHT</div>
+			<div class="cube__face cube__face--left">LEFT</div>
+			<div class="cube__face cube__face--top">
+				<div class="platter">
+					<div class="disc">PLATTER</div>
+				</div>
+				<div class="panel__controls--container">
+					<input type="range" min="1" max="100" value="50" class="slider__volume" id="slidervolumeid"
+						style="writing-mode: vertical-lr; direction: rtl">
+					<button id="start-stop-button-id" class="button__start--stop" type="button">START/STOP</button>
+				</div>
+			</div>
+			<div class="cube__face cube__face--bottom">BOTTOM</div>
 		</div>
-		<script type="text/javascript" src="../js_compilation/index.js"></script>
-	</body>
+	</div>
+	<script type="text/javascript" src="../js_compilation/index.js"></script>
+</body>
+
 </html>
